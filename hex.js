@@ -1,7 +1,3 @@
-// based on the marble method (which is supposedly mathematically similiar to the yarrow stalk method).
-// using randomClass made by fredibach.ch [atm]
-// there are many reasons why this form of divination has survived to the present day. i'm making use of what has been described as "idiot buttons" - i.e loading times when no loading time is needed. by meditating on the question the user poses to the Oracle (lol) it focuses their mind on the issue at stake - so that when they read the text their perception reads what is relevent to the issue.
-// changing lines next!
 
 $(function() {
 	
@@ -9,9 +5,14 @@ var lines = [ "yang", "yang", "yang", "yang", "yang", "yin", "yin", "yin", "yin"
 
 $("button.hex").click(function() {
   $("#hexagram span").randomClass(lines);
+  $("#ask p").hide();
   $(this).hide();
   $("button.reset").show();
-  if ($(".line1").hasClass("yang") || $(".line1").hasClass("yangC") )
+  $("#hexagram").checkHex();
+});
+
+$.fn.checkHex = function() {
+if ($(".line1").hasClass("yang") || $(".line1").hasClass("yangC") )
   if ( $(".line2").hasClass("yang") || $(".line2").hasClass("yangC") )
     if ( $(".line3").hasClass("yang") || $(".line3").hasClass("yangC")  )
       if ( $(".line4").hasClass("yang") || $(".line4").hasClass("yangC") )
@@ -376,7 +377,7 @@ if ($(".line1").hasClass("yang") || $(".line1").hasClass("yangC") )
     if ( $(".line3").hasClass("yin") || $(".line3").hasClass("yinC")  )
       if ( $(".line4").hasClass("yang") || $(".line4").hasClass("yangC") )
 		if ( $(".line5").hasClass("yin") || $(".line5").hasClass("yinC") )
-			if ( $(".line6").hasClass("yin") || $(".line6").hasClass("yinC") )
+			if ( $(".line6").hasClass("yang") || $(".line6").hasClass("yangC") )
 {
   $("#hex37").show().css('display', 'inline-block');
 }
@@ -651,9 +652,39 @@ if ($(".line1").hasClass("yang") || $(".line1").hasClass("yangC") )
   $("#hex64").show().css('display', 'inline-block');
 }
 
+if ($(".line").hasClass("yangC") || $(".line").hasClass("yinC"))
+	{
+		$(".changing").show();
+	}
+	
+};
 
+  $.fn.switchClass = function(remove, add){
+    var style = {
+        'transition-property'        : 'all',
+        'transition-duration'        : '0.5s',
+        'transition-timing-function' : 'ease-out'
+    };
+
+    return this.each(function(){
+        $(this).css(style).removeClass(remove).addClass(add)
+    });
+  };
+
+$(".changing").click(function() {
+	$(".result").hide();
+	$(".yangC").switchClass("yangC","yin");
+	$(".yinC").switchClass("yinC","yang");
+	$("#hexagram").checkHex();
+	$(this).hide();
 
 });
+
+$(".td a").click(function() {
+  $(".ask").toggle();
+  $($(this).attr('href')).toggle();
+});
+
 
 $("button.reset").click(function() {
   $("#hexagram span").removeClass("yang");
@@ -661,12 +692,20 @@ $("button.reset").click(function() {
   $("#hexagram span").removeClass("yangC");
   $("#hexagram span").removeClass("yinC");
   $(this).hide();
+  $("#ask p").show();
   $("button.hex").show();
   $(".result").hide();
+  $(".changing").hide();
 });
 
 $("#about").click(function() {
   $("#info").toggle();
+});
+$("#info-text").click(function() {
+  $("#info").toggle();
+});
+$("#chart").click(function() {
+  $(".table").toggle();
 });
 
 });
