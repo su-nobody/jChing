@@ -1,0 +1,1080 @@
+<style>
+::selection {background: #dabbed;color:#beefed;}
+* {border:none;margin:0;font-family:monospace;text-shadow: 0px 0px 7px rgba(59, 59, 59, 0.77);color:#decade;}
+body {background:#333;}
+#result {width:64px;margin:auto;padding-top:3%;}
+#result div {height:12px;}
+.yang {border-top:8px solid #decade;}
+.yin {border-top:8px dashed #decade;}
+.yangC {border-top:8px solid #decade;animation:flash 1.5s linear infinite;}
+.yinC {border-top:8px dashed #decade;animation:flash 1.5s linear infinite;}
+@keyframes flash {0% {border-color: #E1B9E1;opacity:.3;} 33% {border-color: #E1A1E1;opacity:1;} 50% {border-color: #E1B9E1;opacity:0;} 77% {border-color:#E784E7;opacity:1;} 100% {border-color:#E1A1E1;opacity:.3;} }
+#buttons {width:512px;margin:auto;text-align:center;}
+#cast {display:block;}
+#transform {display:none;}
+button {background:rgba(255,255,255,.25);color:#333;width:128px;height:32px;padding:8px;margin:auto;color: inherit;}
+#response div {display:none;text-align:center;width:44%;margin:auto;}
+#response div p:first-child {font-size:3em;padding:8px;}
+section {padding:8px 0;}
+</style>
+
+<section id="result">
+<div class="line" id="1line"></div>
+<div class="line" id="2line"></div>
+<div class="line" id="3line"></div>
+<div class="line" id="4line"></div>
+<div class="line" id="5line"></div>
+<div class="line" id="6line"></div>
+</section>
+<section id="buttons">
+<button id="cast" onclick="castStalks()">cast</button>
+<button id="transform" onclick="transform()">transform</button>
+</section>
+<section id="response">
+ 	<div id="hex1">
+ 		<p>01 ䷀</p>
+ 		<p>sublime success, furthering reality through eternal perseverance; harmony in an entropic stasis foretold several times.</p>
+ 	</div>
+	<div id="hex2">
+		<p>02 ䷁</p>
+		<p>as the earth ages a moment, a human lifetime slips by. it is seldom unwise to seek guidance when the footpath is well trodden.</p>
+	</div>
+ 	<div id="hex3">
+ 		<p>03 ䷂</p>
+ 		 <p>supreme successes are yet to be undertaken. self-made magnates magnetise money, never nothing; a helping hand tightens around a cold shoulder.</p>
+ 	</div>
+ 	<div id="hex4">
+ 		<p>04 ䷃</p>
+		<p>the first sentence our oracle performs will inform; two or three times, it is importunity, inaction, infinite information.</p>
+	</div>
+ 	<div id="hex5">
+ 		<p>05 ䷄</p>
+ 		<p>the lightness of sincerity brings good fortune to crossing the empty horizon lying dormant ahead.</p>
+ 	</div>
+ 	<div id="hex6">
+ 		<p>06 ䷅</p>
+ 		<p>sincere obstruction. cautiously halt or proceed endward; first, visit the abode starlit at all times. each conscious choice is an invisible veil.</p>
+ 	</div>
+	<div id="hex7">
+		<div>07 ䷆</div>
+		<p>an aimless army navigates a battlefield blamelessly, those with society in their sights strengthen obscure obituaries over other occasions.</p>
+	</div>
+	<div id="hex8">
+		<p>08 ䷇</p>
+		<p>allied avatars atone and ascend; it is imperative to inquire. uncertain sheep flock still, and those late home perish.</p>
+	</div>
+	<div id="hex9">
+		<p>09 ䷈</p>
+		<p>as dense clouds surround the mind's throne, the unassuming assumes great influence over a distance.</p>
+	</div>
+	<div id="hex10">
+		<p>10 ䷉</p>
+		<p>the space between the foundations of future cityscapes escape the chaotic static surrounding this thought-dress.</p>
+	</div>
+	<div id="hex11">
+		<p>11 ䷊</p>
+		<p>leave your things behind while colliding futures ripple through the momentary bliss before the psychosensory onslaught of waking reality. tomorrow's beauty relies on the past's horrors.</p> 
+	</div>
+	<div id="hex12">
+		<p>12 ䷋</p>
+		<p>stand more still than the trees that envy your bipedal discourse with this planet; as successes fade, joy can be found in the remnents of this love.</p>
+	</div>
+	<div id="hex13">
+		<p>13 ䷌</p>
+		<p>perseverance is a superior anarchic tool of progression. the distance between an awakened goal and grounded awakening dwarfs giant echelon escapists, causing them to submit to the ocean's majesty.</p>
+	</div>
+	<div id="hex14">
+		<p>14 ䷍</p>
+		<p>clarity and strength unite to dispose of unwanted failure.</p>
+	</div>
+	<div id="hex15">
+		<p>15 ䷎</p>
+		<p>modest successes and arrogant failures litter the history of humankind; those thieves you are taught to remember are, at the very least, follow through on their desires.</p>
+	</div>
+	<div id="hex16">
+		<p>16 ䷏</p>
+		<p>it would further you to employ workers to march for your cause.</p>
+	</div>
+	<div id="hex17">
+		<p>17 ䷐</p>
+		<p>follow or be followed; neither always correct. take a step back before departing, or sprint into the astral mists of human's progress. either choice blameless.</p>
+	</div>
+	<div id="hex18">
+		<p>18 ䷑</p>
+		<p>before, for three days, plan. after, for three days, reflect.</p>
+	</div>
+	<div id="hex19">
+		<p>19 ䷒</p>
+		<p>eight months of misfortune.</p>
+	</div>
+	<div id="hex20">
+		<p>20 ䷓</p>
+		<p>they watch them wash, full of trust, yet offer nothing.</p>
+	</div>
+	<div id="hex21">
+		<p>21 ䷔</p>
+		<p>let justice be administered by those who hold the majority of the situation's knowledge.</p>
+	</div>
+	<div id="hex22">
+		<p>22 ䷕</p>
+		<p>start that project immediately. small successes are dynamic foundations to long-lasting contentment.</p>
+	</div>
+	<div id="hex23">
+		<p>23 ䷖</p>
+		<p>do not leave yet.</p>
+	</div>
+	<div id="hex24">
+		<p>24 ䷗</p>
+		<p>leave the hood and come back; friends come and go, as do waves lapping at the shore. if you have somewhere to go, stay seven days.</p>
+	</div>
+	<div id="hex25">
+		<p>25 ䷘</p>
+		<p>supreme success follows this perseverance; if somebody is not who they should be, watch their back and inexplicably delay their movements.</p>
+	</div>
+	<div id="hex26">
+		<p>26 ䷙</p>
+		<p>do not eat inside your home, break barriers if necessary.</p>
+	</div>
+	<div id="hex27">
+		<p>27 ䷚</p>
+		<p>pay heed to those providing nourishment to your establishment. be mindful of what people wish to nourish themselves with when nobody looks.</p>
+	</div>
+	<div id="hex28">
+		<p>28 ䷛</p>
+		<p>it is often best to leave and begin anew, especially in an instant society.</p>
+	</div>
+	<div id="hex29">
+		<p>29 ䷜</p>
+		<p>if you are sincere, you have success in your heart.</p>
+	</div>
+	<div id="hex30">
+		<p>30 ䷝</p>
+		<p>caring for a cow brings harmony to your settlement, yet it is vital to merge this peaceful process with the maturity of the city which only exists internally.</p>
+	</div>
+	<div id="hex31">
+		<p>31 ䷞</p>
+		<p>influential successes further social heirarchy; taking a partner would be admired by several important benefactors. </p>
+	</div>
+	<div id="hex32">
+		<p>32 ䷟</p>
+		<p>there can be no blame if your exit is completed in a disarming fashion; without a safe-house, the roads are endless.</p>
+	</div>
+	<div id="hex33">
+		<p>33 ䷠</p>
+		<p>success depends on smaller increments of success.</p>
+	</div>
+	<div id="hex34">
+		<p>34 ䷡</p>
+		<p>continue always.</p>
+	</div>
+	<div id="hex35">
+		<p>35 ䷢</p>
+		<p>power begets power; three times you shall be heard. make sure what you have to say is understood with the correct interpretation.</p>
+	</div>
+	<div id="hex36">
+		<p>36 ䷣</p>
+		<p>when each avenue is an alleway of adversity, it is better to back bravery than allow an adverse ascension through cowardly communication cut with a cow's courage.</p>
+	</div>
+	<div id="hex37">
+		<p>37 ䷤</p>
+		<p>feminine energy abounds and furthers your cause; using this moment to meet the masculine head on will deepen the struggle.</p>
+	</div>
+	<div id="hex38">
+		<p>38 ䷥</p>
+		<p>meander around your settlement as water profession a helicoidal flow. find fortune unlikely in scope; the smallest profit can be considered prophetical.</p>
+	</div>
+	<div id="hex39">
+		<p>39 ䷦</p>
+		<p>south-west expeditions will be beneficial, north-east summons a silent wasteland where time becomes meaninglessly important. seek counsel when offered.</p>
+	</div>
+	<div id="hex40">
+		<p>40 ䷧</p>
+		<p>southern energy delights sensory materialism, in this instance. without a destination, arrive; without a journey, depart.</p>
+	</div>
+	<div id="hex41">
+		<p>41 ䷨</p>
+		<p>sincere decrease brings blameless fortune. the project is waiting for completion, so sacrifice two small bowls to your settlement.</p>
+	</div>
+	<div id="hex42">
+		<p>42 ䷩</p>
+		<p>commit yourself to the labourious tedium of the great journey all refuse to undertake. there is seldom success in inaction.</p>
+	</div>
+	<div id="hex43">
+		<p>43 ䷪</p>
+		<p>if a conflict arises, it is important to truthfully announce this information to the monarch's company, although your settlement must be aware first. arms bring danger given those present.</p>
+	</div>
+	<div id="hex44">
+		<p>44 ䷫</p>
+		<p>do not submit to partnership if the power is inequally weighted between each individual.</p>
+	</div>
+	<div id="hex45">
+		<p>45 ䷬</p>
+		<p>as the monarch approaches the temple, visit wisdom with an offering befiting the travelling monarch. seek success.</p>
+	</div>
+	<div id="hex46">
+		<p>46 ䷭</p>
+		<p>with no fear visit the elder in your settlement. depart southward if they are unamused with your disturbance.</p>
+	</div>
+	<div id="hex47">
+		<p>47 ䷮</p>
+		<p>the elder brings a great fortune. do not accept blame; they will not believe you either way.</p>
+	</div>
+	<div id="hex48">
+		<p>48 ䷯</p>
+		<p>although the settlement will transform beyond recognition, some vital supply routes remain the same. ensure you are on the record, in some form.</p>
+	</div>
+	<div id="hex49">
+		<p>49 ䷰</p>
+		<p>people will believe you on your day. with no remorse, nor supremacy, increase your communication network.</p>
+	</div>
+	<div id="hex50">
+		<p>50 ䷱</p>
+		<p>excellent production will ensure a beautiful ascension.</p>
+	</div>
+	<div id="hex51">
+		<p>51 ䷲</p>
+		<p>shocking success! humour abounds the settlement, while terror speeds through sub-orbital speeds globally.</p>
+	</div>
+	<div id="hex52">
+		<p>52 ䷳</p>
+		<p>spirtual ascension cannot be caged in a digital universe; entranced, meet with the others. your settlement will cope with your temporary absence.</p>
+	</div>
+	<div id="hex53">
+		<p>53 ䷴</p>
+		<p>an associate will delay leaving if treated to moments of good fortune.</p>
+	</div>
+	<div id="hex54">
+		<p>54 ䷵</p>
+		<p>inaction furthers.</p>
+	</div>
+	<div id="hex55">
+		<p>55 ䷶</p>
+		<p>wealth and warmth stretch through each networked individual, and the monarch will take the appearance of the midday sun.</p>
+	</div>
+	<div id="hex56">
+		<p>56 ䷷</p>
+		<p>wander wider to attain a fortune undescribed by this reality.</p>
+	</div>
+	<div id="hex57">
+		<p>57 ䷸</p>
+		<p>the elder of the settlement will not employ you to undertake his true task. leave to the safe-house. you must return to the settlement when it appears completed.</p>
+	</div>
+	<div id="hex58">
+		<p>58 ䷹</p>
+		<p>the clear water in the lake will bring joy to the enemies of the state; for this reason, we will march relentlessly.</p>
+	</div>
+	<div id="hex59">
+		<p>59 ䷺</p>
+		<p>the event will end, and as the crowd thins, those scattered souls remaining will find solace in slow movements.</p>
+	</div>
+	<div id="hex60">
+		<p>60 ䷻</p>
+		<p>limits to sucess are enforced by the foundations laid previously; let your successes overflow like wine in a golden age.</p>
+	</div>
+	<div id="hex61">
+		<p>61 ䷼</p>
+		<p>the inner truth of a human is no different to that of a pig or a fish. armed with this knowledge, depart quickly.</p>
+	</div>
+	<div id="hex62">
+		<p>62 ䷽</p>
+		<p>the thunder enshrines the mountain with the reality of the almighty. the monarch must bow lower than the elder. a bird in flight carries an important message; below above, above below.</p>
+	</div>
+	<div id="hex63">
+		<p>63 ䷾</p>
+		<p>the start, if successful and profitable, will be a small part of the chapter to follow. disordered endings need not damage relationships.</p>
+	</div>
+	<div id="hex64">
+		<p>64 ䷿</p>
+		<p>be mindful of the way the water will carry a flame in ecological catastrophes. inaction isn't invisible.</p>
+	</div>
+	</section>
+<script>
+function showResult() {
+const results = document.querySelectorAll("section#response > div");
+for (var x = 0; x < results.length; x++)
+    results[x].style.display = 'none';
+
+var l1ne = document.getElementById('1line');
+var l2ne = document.getElementById('2line');
+var l3ne = document.getElementById('3line');
+var l4ne = document.getElementById('4line');
+var l5ne = document.getElementById('5line');
+var l6ne = document.getElementById('6line');  
+if (l1ne.classList.contains('yang') || l1ne.classList.contains('yangC'))
+  if (l2ne.classList.contains('yang') || l2ne.classList.contains('yangC'))
+    if (l3ne.classList.contains('yang') || l3ne.classList.contains('yangC'))
+      if (l4ne.classList.contains('yang') || l4ne.classList.contains('yangC'))
+        if (l5ne.classList.contains('yang') || l5ne.classList.contains('yangC'))
+          if (l6ne.classList.contains('yang') || l6ne.classList.contains('yangC')) {
+          document.getElementById('hex1').style.display = "block";
+        }
+  
+if (l1ne.classList.contains('yin') || l1ne.classList.contains('yinC'))
+  if (l2ne.classList.contains('yin') || l2ne.classList.contains('yinC'))
+    if (l3ne.classList.contains('yin') || l3ne.classList.contains('yinC'))
+      if (l4ne.classList.contains('yin') || l4ne.classList.contains('yinC'))
+        if (l5ne.classList.contains('yin') || l5ne.classList.contains('yinC'))
+          if (l6ne.classList.contains('yin') || l6ne.classList.contains('yinC')) {
+          document.getElementById('hex2').style.display = "block";
+        }
+if (l1ne.classList.contains('yin') || l1ne.classList.contains('yinC'))
+  if (l2ne.classList.contains('yang') || l2ne.classList.contains('yangC'))
+    if (l3ne.classList.contains('yin') || l3ne.classList.contains('yinC'))
+      if (l4ne.classList.contains('yin') || l4ne.classList.contains('yinC'))
+		if (l5ne.classList.contains('yin') || l5ne.classList.contains('yinC'))
+			if (l6ne.classList.contains('yang') || l6ne.classList.contains('yangC'))
+{
+  document.getElementById('hex3').style.display = "block";
+}
+
+if (l1ne.classList.contains('yang') || l1ne.classList.contains('yangC'))
+  if (l2ne.classList.contains('yin') || l2ne.classList.contains('yinC'))
+    if (l3ne.classList.contains('yin') || l3ne.classList.contains('yinC'))
+      if (l4ne.classList.contains('yin') || l4ne.classList.contains('yinC'))
+		if (l5ne.classList.contains('yang') || l5ne.classList.contains('yangC'))
+			if (l6ne.classList.contains('yin') || l6ne.classList.contains('yinC'))
+{
+  document.getElementById('hex4').style.display = "block";
+}
+
+if (l1ne.classList.contains('yin') || l1ne.classList.contains('yinC'))
+  if (l2ne.classList.contains('yang') || l2ne.classList.contains('yangC'))
+    if (l3ne.classList.contains('yin') || l3ne.classList.contains('yinC'))
+      if (l4ne.classList.contains('yang') || l4ne.classList.contains('yangC'))
+		if (l5ne.classList.contains('yang') || l5ne.classList.contains('yangC'))
+			if (l6ne.classList.contains('yang') || l6ne.classList.contains('yangC'))
+{
+  document.getElementById('hex5').style.display = "block";
+}
+
+if (l1ne.classList.contains('yang') || l1ne.classList.contains('yangC'))
+  if (l2ne.classList.contains('yang') || l2ne.classList.contains('yangC'))
+    if (l3ne.classList.contains('yang') || l3ne.classList.contains('yangC'))
+      if (l4ne.classList.contains('yin') || l4ne.classList.contains('yinC'))
+		if (l5ne.classList.contains('yang') || l5ne.classList.contains('yangC'))
+			if (l6ne.classList.contains('yin') || l6ne.classList.contains('yinC'))
+{
+  document.getElementById('hex6').style.display = "block";
+}
+
+if (l1ne.classList.contains('yin') || l1ne.classList.contains('yinC'))
+  if (l2ne.classList.contains('yin') || l2ne.classList.contains('yinC'))
+    if (l3ne.classList.contains('yin') || l3ne.classList.contains('yinC'))
+      if (l4ne.classList.contains('yin') || l4ne.classList.contains('yinC'))
+		if (l5ne.classList.contains('yang') || l5ne.classList.contains('yangC'))
+			if (l6ne.classList.contains('yin') || l6ne.classList.contains('yinC'))
+{
+  document.getElementById('hex7').style.display = "block";
+}
+
+if (l1ne.classList.contains('yin') || l1ne.classList.contains('yinC'))
+  if (l2ne.classList.contains('yang') || l2ne.classList.contains('yangC'))
+    if (l3ne.classList.contains('yin') || l3ne.classList.contains('yinC'))
+      if (l4ne.classList.contains('yin') || l4ne.classList.contains('yinC'))
+		if (l5ne.classList.contains('yin') || l5ne.classList.contains('yinC'))
+			if (l6ne.classList.contains('yin') || l6ne.classList.contains('yinC'))
+{
+  document.getElementById('hex8').style.display = "block";
+}
+
+if (l1ne.classList.contains('yang') || l1ne.classList.contains('yangC'))
+  if (l2ne.classList.contains('yang') || l2ne.classList.contains('yangC'))
+    if (l3ne.classList.contains('yin') || l3ne.classList.contains('yinC'))
+      if (l4ne.classList.contains('yang') || l4ne.classList.contains('yangC'))
+		if (l5ne.classList.contains('yang') || l5ne.classList.contains('yangC'))
+			if (l6ne.classList.contains('yang') || l6ne.classList.contains('yangC'))
+{
+  document.getElementById('hex9').style.display = "block";
+}
+
+if (l1ne.classList.contains('yang') || l1ne.classList.contains('yangC'))
+  if (l2ne.classList.contains('yang') || l2ne.classList.contains('yangC'))
+    if (l3ne.classList.contains('yang') || l3ne.classList.contains('yangC'))
+      if (l4ne.classList.contains('yin') || l4ne.classList.contains('yinC'))
+		if (l5ne.classList.contains('yang') || l5ne.classList.contains('yangC'))
+			if (l6ne.classList.contains('yang') || l6ne.classList.contains('yangC'))
+{
+  document.getElementById('hex10').style.display = "block";
+}
+
+if (l1ne.classList.contains('yin') || l1ne.classList.contains('yinC'))
+  if (l2ne.classList.contains('yin') || l2ne.classList.contains('yinC'))
+    if (l3ne.classList.contains('yin') || l3ne.classList.contains('yinC'))
+      if (l4ne.classList.contains('yang') || l4ne.classList.contains('yangC'))
+		if (l5ne.classList.contains('yang') || l5ne.classList.contains('yangC'))
+			if (l6ne.classList.contains('yang') || l6ne.classList.contains('yangC'))
+{
+  document.getElementById('hex11').style.display = "block";
+}
+
+if (l1ne.classList.contains('yang') || l1ne.classList.contains('yangC'))
+  if (l2ne.classList.contains('yang') || l2ne.classList.contains('yangC'))
+    if (l3ne.classList.contains('yang') || l3ne.classList.contains('yangC'))
+      if (l4ne.classList.contains('yin') || l4ne.classList.contains('yinC'))
+		if (l5ne.classList.contains('yin') || l5ne.classList.contains('yinC'))
+			if (l6ne.classList.contains('yin') || l6ne.classList.contains('yinC'))
+{
+  document.getElementById('hex12').style.display = "block";
+}
+
+if (l1ne.classList.contains('yang') || l1ne.classList.contains('yangC'))
+  if (l2ne.classList.contains('yang') || l2ne.classList.contains('yangC'))
+    if (l3ne.classList.contains('yang') || l3ne.classList.contains('yangC'))
+      if (l4ne.classList.contains('yang') || l4ne.classList.contains('yangC'))
+		if (l5ne.classList.contains('yin') || l5ne.classList.contains('yinC'))
+			if (l6ne.classList.contains('yang') || l6ne.classList.contains('yangC'))
+{
+  document.getElementById('hex13').style.display = "block";
+}
+
+if (l1ne.classList.contains('yang') || l1ne.classList.contains('yangC'))
+  if (l2ne.classList.contains('yin') || l2ne.classList.contains('yinC'))
+    if (l3ne.classList.contains('yang') || l3ne.classList.contains('yangC'))
+      if (l4ne.classList.contains('yang') || l4ne.classList.contains('yangC'))
+		if (l5ne.classList.contains('yang') || l5ne.classList.contains('yangC'))
+			if (l6ne.classList.contains('yang') || l6ne.classList.contains('yangC'))
+{
+  document.getElementById('hex14').style.display = "block";
+}
+
+if (l1ne.classList.contains('yin') || l1ne.classList.contains('yinC'))
+  if (l2ne.classList.contains('yin') || l2ne.classList.contains('yinC'))
+    if (l3ne.classList.contains('yin') || l3ne.classList.contains('yinC'))
+      if (l4ne.classList.contains('yang') || l4ne.classList.contains('yangC'))
+		if (l5ne.classList.contains('yin') || l5ne.classList.contains('yinC'))
+			if (l6ne.classList.contains('yin') || l6ne.classList.contains('yinC'))
+{
+  document.getElementById('hex15').style.display = "block";
+}
+
+if (l1ne.classList.contains('yin') || l1ne.classList.contains('yinC'))
+  if (l2ne.classList.contains('yin') || l2ne.classList.contains('yinC'))
+    if (l3ne.classList.contains('yang') || l3ne.classList.contains('yangC'))
+      if (l4ne.classList.contains('yin') || l4ne.classList.contains('yinC'))
+		if (l5ne.classList.contains('yin') || l5ne.classList.contains('yinC'))
+			if (l6ne.classList.contains('yin') || l6ne.classList.contains('yinC'))
+{
+  document.getElementById('hex16').style.display = "block";
+}
+
+if (l1ne.classList.contains('yin') || l1ne.classList.contains('yinC'))
+  if (l2ne.classList.contains('yang') || l2ne.classList.contains('yangC'))
+    if (l3ne.classList.contains('yang') || l3ne.classList.contains('yangC'))
+      if (l4ne.classList.contains('yin') || l4ne.classList.contains('yinC'))
+		if (l5ne.classList.contains('yin') || l5ne.classList.contains('yinC'))
+			if (l6ne.classList.contains('yang') || l6ne.classList.contains('yangC'))
+{
+  document.getElementById('hex17').style.display = "block";
+}
+
+if (l1ne.classList.contains('yang') || l1ne.classList.contains('yangC'))
+  if (l2ne.classList.contains('yin') || l2ne.classList.contains('yinC'))
+    if (l3ne.classList.contains('yin') || l3ne.classList.contains('yinC'))
+      if (l4ne.classList.contains('yang') || l4ne.classList.contains('yangC'))
+		if (l5ne.classList.contains('yang') || l5ne.classList.contains('yangC'))
+			if (l6ne.classList.contains('yin') || l6ne.classList.contains('yinC'))
+{
+  document.getElementById('hex18').style.display = "block";
+}
+
+if (l1ne.classList.contains('yin') || l1ne.classList.contains('yinC'))
+  if (l2ne.classList.contains('yin') || l2ne.classList.contains('yinC'))
+    if (l3ne.classList.contains('yin') || l3ne.classList.contains('yinC'))
+      if (l4ne.classList.contains('yin') || l4ne.classList.contains('yinC'))
+		if (l5ne.classList.contains('yang') || l5ne.classList.contains('yangC'))
+			if (l6ne.classList.contains('yang') || l6ne.classList.contains('yangC'))
+{
+  document.getElementById('hex19').style.display = "block";
+}
+
+if (l1ne.classList.contains('yang') || l1ne.classList.contains('yangC'))
+  if (l2ne.classList.contains('yang') || l2ne.classList.contains('yangC'))
+    if (l3ne.classList.contains('yin') || l3ne.classList.contains('yinC'))
+      if (l4ne.classList.contains('yin') || l4ne.classList.contains('yinC'))
+		if (l5ne.classList.contains('yin') || l5ne.classList.contains('yinC'))
+			if (l6ne.classList.contains('yin') || l6ne.classList.contains('yinC'))
+{
+  document.getElementById('hex20').style.display = "block";
+}
+
+if (l1ne.classList.contains('yang') || l1ne.classList.contains('yangC'))
+  if (l2ne.classList.contains('yin') || l2ne.classList.contains('yinC'))
+    if (l3ne.classList.contains('yang') || l3ne.classList.contains('yangC'))
+      if (l4ne.classList.contains('yin') || l4ne.classList.contains('yinC'))
+		if (l5ne.classList.contains('yin') || l5ne.classList.contains('yinC'))
+			if (l6ne.classList.contains('yang') || l6ne.classList.contains('yangC'))
+{
+  document.getElementById('hex21').style.display = "block";
+}
+
+if (l1ne.classList.contains('yang') || l1ne.classList.contains('yangC'))
+  if (l2ne.classList.contains('yin') || l2ne.classList.contains('yinC'))
+    if (l3ne.classList.contains('yin') || l3ne.classList.contains('yinC'))
+      if (l4ne.classList.contains('yang') || l4ne.classList.contains('yangC'))
+		if (l5ne.classList.contains('yin') || l5ne.classList.contains('yinC'))
+			if (l6ne.classList.contains('yang') || l6ne.classList.contains('yangC'))
+{
+  document.getElementById('hex22').style.display = "block";
+}
+
+if (l1ne.classList.contains('yang') || l1ne.classList.contains('yangC'))
+  if (l2ne.classList.contains('yin') || l2ne.classList.contains('yinC'))
+    if (l3ne.classList.contains('yin') || l3ne.classList.contains('yinC'))
+      if (l4ne.classList.contains('yin') || l4ne.classList.contains('yinC'))
+		if (l5ne.classList.contains('yin') || l5ne.classList.contains('yinC'))
+			if (l6ne.classList.contains('yin') || l6ne.classList.contains('yinC'))
+{
+  document.getElementById('hex23').style.display = "block";
+}
+
+if (l1ne.classList.contains('yin') || l1ne.classList.contains('yinC'))
+  if (l2ne.classList.contains('yin') || l2ne.classList.contains('yinC'))
+    if (l3ne.classList.contains('yin') || l3ne.classList.contains('yinC'))
+      if (l4ne.classList.contains('yin') || l4ne.classList.contains('yinC'))
+		if (l5ne.classList.contains('yin') || l5ne.classList.contains('yinC'))
+			if (l6ne.classList.contains('yang') || l6ne.classList.contains('yangC'))
+{
+  document.getElementById('hex24').style.display = "block";
+}
+
+if (l1ne.classList.contains('yang') || l1ne.classList.contains('yangC'))
+  if (l2ne.classList.contains('yang') || l2ne.classList.contains('yangC'))
+    if (l3ne.classList.contains('yang') || l3ne.classList.contains('yangC'))
+      if (l4ne.classList.contains('yin') || l4ne.classList.contains('yinC'))
+		if (l5ne.classList.contains('yin') || l5ne.classList.contains('yinC'))
+			if (l6ne.classList.contains('yang') || l6ne.classList.contains('yangC'))
+{
+  document.getElementById('hex25').style.display = "block";
+}
+
+if (l1ne.classList.contains('yang') || l1ne.classList.contains('yangC'))
+  if (l2ne.classList.contains('yin') || l2ne.classList.contains('yinC'))
+    if (l3ne.classList.contains('yin') || l3ne.classList.contains('yinC'))
+      if (l4ne.classList.contains('yang') || l4ne.classList.contains('yangC'))
+		if (l5ne.classList.contains('yang') || l5ne.classList.contains('yangC'))
+			if (l6ne.classList.contains('yang') || l6ne.classList.contains('yangC'))
+{
+  document.getElementById('hex26').style.display = "block";
+}
+
+if (l1ne.classList.contains('yang') || l1ne.classList.contains('yangC'))
+  if (l2ne.classList.contains('yin') || l2ne.classList.contains('yinC'))
+    if (l3ne.classList.contains('yin') || l3ne.classList.contains('yinC'))
+      if (l4ne.classList.contains('yin') || l4ne.classList.contains('yinC'))
+		if (l5ne.classList.contains('yin') || l5ne.classList.contains('yinC'))
+			if (l6ne.classList.contains('yang') || l6ne.classList.contains('yangC'))
+{
+  document.getElementById('hex27').style.display = "block";
+}
+
+if (l1ne.classList.contains('yin') || l1ne.classList.contains('yinC'))
+  if (l2ne.classList.contains('yang') || l2ne.classList.contains('yangC'))
+    if (l3ne.classList.contains('yang') || l3ne.classList.contains('yangC'))
+      if (l4ne.classList.contains('yang') || l4ne.classList.contains('yangC'))
+		if (l5ne.classList.contains('yang') || l5ne.classList.contains('yangC'))
+			if (l6ne.classList.contains('yin') || l6ne.classList.contains('yinC'))
+{
+  document.getElementById('hex28').style.display = "block";
+}
+
+if (l1ne.classList.contains('yin') || l1ne.classList.contains('yinC'))
+  if (l2ne.classList.contains('yang') || l2ne.classList.contains('yangC'))
+    if (l3ne.classList.contains('yin') || l3ne.classList.contains('yinC'))
+      if (l4ne.classList.contains('yin') || l4ne.classList.contains('yinC'))
+		if (l5ne.classList.contains('yang') || l5ne.classList.contains('yangC'))
+			if (l6ne.classList.contains('yin') || l6ne.classList.contains('yinC'))
+{
+  document.getElementById('hex29').style.display = "block";
+}
+
+if (l1ne.classList.contains('yang') || l1ne.classList.contains('yangC'))
+  if (l2ne.classList.contains('yin') || l2ne.classList.contains('yinC'))
+    if (l3ne.classList.contains('yang') || l3ne.classList.contains('yangC'))
+      if (l4ne.classList.contains('yang') || l4ne.classList.contains('yangC'))
+		if (l5ne.classList.contains('yin') || l5ne.classList.contains('yinC'))
+			if (l6ne.classList.contains('yang') || l6ne.classList.contains('yangC'))
+{
+  document.getElementById('hex30').style.display = "block";
+}
+
+if (l1ne.classList.contains('yin') || l1ne.classList.contains('yinC'))
+  if (l2ne.classList.contains('yang') || l2ne.classList.contains('yangC'))
+    if (l3ne.classList.contains('yang') || l3ne.classList.contains('yangC'))
+      if (l4ne.classList.contains('yang') || l4ne.classList.contains('yangC'))
+		if (l5ne.classList.contains('yin') || l5ne.classList.contains('yinC'))
+			if (l6ne.classList.contains('yin') || l6ne.classList.contains('yinC'))
+{
+  document.getElementById('hex31').style.display = "block";
+}
+
+if (l1ne.classList.contains('yin') || l1ne.classList.contains('yinC'))
+  if (l2ne.classList.contains('yin') || l2ne.classList.contains('yinC'))
+    if (l3ne.classList.contains('yang') || l3ne.classList.contains('yangC'))
+      if (l4ne.classList.contains('yang') || l4ne.classList.contains('yangC'))
+		if (l5ne.classList.contains('yang') || l5ne.classList.contains('yangC'))
+			if (l6ne.classList.contains('yin') || l6ne.classList.contains('yinC'))
+{
+  document.getElementById('hex32').style.display = "block";
+}
+
+if (l1ne.classList.contains('yang') || l1ne.classList.contains('yangC'))
+  if (l2ne.classList.contains('yang') || l2ne.classList.contains('yangC'))
+    if (l3ne.classList.contains('yang') || l3ne.classList.contains('yangC'))
+      if (l4ne.classList.contains('yang') || l4ne.classList.contains('yangC'))
+		if (l5ne.classList.contains('yin') || l5ne.classList.contains('yinC'))
+			if (l6ne.classList.contains('yin') || l6ne.classList.contains('yinC'))
+{
+  document.getElementById('hex33').style.display = "block";
+}
+
+if (l1ne.classList.contains('yin') || l1ne.classList.contains('yinC'))
+  if (l2ne.classList.contains('yin') || l2ne.classList.contains('yinC'))
+    if (l3ne.classList.contains('yang') || l3ne.classList.contains('yangC'))
+      if (l4ne.classList.contains('yang') || l4ne.classList.contains('yangC'))
+		if (l5ne.classList.contains('yang') || l5ne.classList.contains('yangC'))
+			if (l6ne.classList.contains('yang') || l6ne.classList.contains('yangC'))
+{
+  document.getElementById('hex34').style.display = "block";
+}
+
+if (l1ne.classList.contains('yang') || l1ne.classList.contains('yangC'))
+  if (l2ne.classList.contains('yin') || l2ne.classList.contains('yinC'))
+    if (l3ne.classList.contains('yang') || l3ne.classList.contains('yangC'))
+      if (l4ne.classList.contains('yin') || l4ne.classList.contains('yinC'))
+		if (l5ne.classList.contains('yin') || l5ne.classList.contains('yinC'))
+			if (l6ne.classList.contains('yin') || l6ne.classList.contains('yinC'))
+{
+  document.getElementById('hex35').style.display = "block";
+}
+
+if (l1ne.classList.contains('yin') || l1ne.classList.contains('yinC'))
+  if (l2ne.classList.contains('yin') || l2ne.classList.contains('yinC'))
+    if (l3ne.classList.contains('yin') || l3ne.classList.contains('yinC'))
+      if (l4ne.classList.contains('yang') || l4ne.classList.contains('yangC'))
+		if (l5ne.classList.contains('yin') || l5ne.classList.contains('yinC'))
+			if (l6ne.classList.contains('yang') || l6ne.classList.contains('yangC'))
+{
+  document.getElementById('hex36').style.display = "block";
+}
+
+if (l1ne.classList.contains('yang') || l1ne.classList.contains('yangC'))
+  if (l2ne.classList.contains('yang') || l2ne.classList.contains('yangC'))
+    if (l3ne.classList.contains('yin') || l3ne.classList.contains('yinC'))
+      if (l4ne.classList.contains('yang') || l4ne.classList.contains('yangC'))
+		if (l5ne.classList.contains('yin') || l5ne.classList.contains('yinC'))
+			if (l6ne.classList.contains('yang') || l6ne.classList.contains('yangC'))
+{
+  document.getElementById('hex37').style.display = "block";
+}
+
+if (l1ne.classList.contains('yang') || l1ne.classList.contains('yangC'))
+  if (l2ne.classList.contains('yin') || l2ne.classList.contains('yinC'))
+    if (l3ne.classList.contains('yang') || l3ne.classList.contains('yangC'))
+      if (l4ne.classList.contains('yin') || l4ne.classList.contains('yinC'))
+		if (l5ne.classList.contains('yang') || l5ne.classList.contains('yangC'))
+			if (l6ne.classList.contains('yang') || l6ne.classList.contains('yangC'))
+{
+  document.getElementById('hex38').style.display = "block";
+}
+
+if (l1ne.classList.contains('yin') || l1ne.classList.contains('yinC'))
+  if (l2ne.classList.contains('yang') || l2ne.classList.contains('yangC'))
+    if (l3ne.classList.contains('yin') || l3ne.classList.contains('yinC'))
+      if (l4ne.classList.contains('yang') || l4ne.classList.contains('yangC'))
+		if (l5ne.classList.contains('yin') || l5ne.classList.contains('yinC'))
+			if (l6ne.classList.contains('yin') || l6ne.classList.contains('yinC'))
+{
+  document.getElementById('hex39').style.display = "block";
+}
+
+if (l1ne.classList.contains('yin') || l1ne.classList.contains('yinC'))
+  if (l2ne.classList.contains('yin') || l2ne.classList.contains('yinC'))
+    if (l3ne.classList.contains('yang') || l3ne.classList.contains('yangC'))
+      if (l4ne.classList.contains('yin') || l4ne.classList.contains('yinC'))
+		if (l5ne.classList.contains('yang') || l5ne.classList.contains('yangC'))
+			if (l6ne.classList.contains('yin') || l6ne.classList.contains('yinC'))
+{
+  document.getElementById('hex40').style.display = "block";
+}
+
+if (l1ne.classList.contains('yang') || l1ne.classList.contains('yangC'))
+  if (l2ne.classList.contains('yin') || l2ne.classList.contains('yinC'))
+    if (l3ne.classList.contains('yin') || l3ne.classList.contains('yinC'))
+      if (l4ne.classList.contains('yin') || l4ne.classList.contains('yinC'))
+		if (l5ne.classList.contains('yang') || l5ne.classList.contains('yangC'))
+			if (l6ne.classList.contains('yang') || l6ne.classList.contains('yangC'))
+{
+  document.getElementById('hex41').style.display = "block";
+}
+
+if (l1ne.classList.contains('yang') || l1ne.classList.contains('yangC'))
+  if (l2ne.classList.contains('yang') || l2ne.classList.contains('yangC'))
+    if (l3ne.classList.contains('yin') || l3ne.classList.contains('yinC'))
+      if (l4ne.classList.contains('yin') || l4ne.classList.contains('yinC'))
+		if (l5ne.classList.contains('yin') || l5ne.classList.contains('yinC'))
+			if (l6ne.classList.contains('yang') || l6ne.classList.contains('yangC'))
+{
+  document.getElementById('hex42').style.display = "block";
+}
+
+if (l1ne.classList.contains('yin') || l1ne.classList.contains('yinC'))
+  if (l2ne.classList.contains('yang') || l2ne.classList.contains('yangC'))
+    if (l3ne.classList.contains('yang') || l3ne.classList.contains('yangC'))
+      if (l4ne.classList.contains('yang') || l4ne.classList.contains('yangC'))
+		if (l5ne.classList.contains('yang') || l5ne.classList.contains('yangC'))
+			if (l6ne.classList.contains('yang') || l6ne.classList.contains('yangC'))
+{
+  document.getElementById('hex43').style.display = "block";
+}
+
+if (l1ne.classList.contains('yang') || l1ne.classList.contains('yangC'))
+  if (l2ne.classList.contains('yang') || l2ne.classList.contains('yangC'))
+    if (l3ne.classList.contains('yang') || l3ne.classList.contains('yangC'))
+      if (l4ne.classList.contains('yang') || l4ne.classList.contains('yangC'))
+		if (l5ne.classList.contains('yang') || l5ne.classList.contains('yangC'))
+			if (l6ne.classList.contains('yin') || l6ne.classList.contains('yinC'))
+{
+  document.getElementById('hex44').style.display = "block";
+}
+
+if (l1ne.classList.contains('yin') || l1ne.classList.contains('yinC'))
+  if (l2ne.classList.contains('yang') || l2ne.classList.contains('yangC'))
+    if (l3ne.classList.contains('yang') || l3ne.classList.contains('yangC'))
+      if (l4ne.classList.contains('yin') || l4ne.classList.contains('yinC'))
+		if (l5ne.classList.contains('yin') || l5ne.classList.contains('yinC'))
+			if (l6ne.classList.contains('yin') || l6ne.classList.contains('yinC'))
+{
+  document.getElementById('hex45').style.display = "block";
+}
+
+if (l1ne.classList.contains('yin') || l1ne.classList.contains('yinC'))
+  if (l2ne.classList.contains('yin') || l2ne.classList.contains('yinC'))
+    if (l3ne.classList.contains('yin') || l3ne.classList.contains('yinC'))
+      if (l4ne.classList.contains('yang') || l4ne.classList.contains('yangC'))
+		if (l5ne.classList.contains('yang') || l5ne.classList.contains('yangC'))
+			if (l6ne.classList.contains('yin') || l6ne.classList.contains('yinC'))
+{
+  document.getElementById('hex46').style.display = "block";
+}
+
+if (l1ne.classList.contains('yin') || l1ne.classList.contains('yinC'))
+  if (l2ne.classList.contains('yang') || l2ne.classList.contains('yangC'))
+    if (l3ne.classList.contains('yang') || l3ne.classList.contains('yangC'))
+      if (l4ne.classList.contains('yin') || l4ne.classList.contains('yinC'))
+		if (l5ne.classList.contains('yang') || l5ne.classList.contains('yangC'))
+			if (l6ne.classList.contains('yin') || l6ne.classList.contains('yinC'))
+{
+  document.getElementById('hex47').style.display = "block";
+}
+
+if (l1ne.classList.contains('yin') || l1ne.classList.contains('yinC'))
+  if (l2ne.classList.contains('yang') || l2ne.classList.contains('yangC'))
+    if (l3ne.classList.contains('yin') || l3ne.classList.contains('yinC'))
+      if (l4ne.classList.contains('yang') || l4ne.classList.contains('yangC'))
+		if (l5ne.classList.contains('yang') || l5ne.classList.contains('yangC'))
+			if (l6ne.classList.contains('yin') || l6ne.classList.contains('yinC'))
+{
+  document.getElementById('hex48').style.display = "block";
+}
+
+if (l1ne.classList.contains('yin') || l1ne.classList.contains('yinC'))
+  if (l2ne.classList.contains('yang') || l2ne.classList.contains('yangC'))
+    if (l3ne.classList.contains('yang') || l3ne.classList.contains('yangC'))
+      if (l4ne.classList.contains('yang') || l4ne.classList.contains('yangC'))
+		if (l5ne.classList.contains('yin') || l5ne.classList.contains('yinC'))
+			if (l6ne.classList.contains('yang') || l6ne.classList.contains('yangC'))
+{
+  document.getElementById('hex49').style.display = "block";
+}
+
+if (l1ne.classList.contains('yang') || l1ne.classList.contains('yangC'))
+  if (l2ne.classList.contains('yin') || l2ne.classList.contains('yinC'))
+    if (l3ne.classList.contains('yang') || l3ne.classList.contains('yangC'))
+      if (l4ne.classList.contains('yang') || l4ne.classList.contains('yangC'))
+		if (l5ne.classList.contains('yang') || l5ne.classList.contains('yangC'))
+			if (l6ne.classList.contains('yin') || l6ne.classList.contains('yinC'))
+{
+  document.getElementById('hex50').style.display = "block";
+}
+
+if (l1ne.classList.contains('yin') || l1ne.classList.contains('yinC'))
+  if (l2ne.classList.contains('yin') || l2ne.classList.contains('yinC'))
+    if (l3ne.classList.contains('yang') || l3ne.classList.contains('yangC'))
+      if (l4ne.classList.contains('yin') || l4ne.classList.contains('yinC'))
+		if (l5ne.classList.contains('yin') || l5ne.classList.contains('yinC'))
+			if (l6ne.classList.contains('yang') || l6ne.classList.contains('yangC'))
+{
+  document.getElementById('hex51').style.display = "block";
+}
+
+if (l1ne.classList.contains('yang') || l1ne.classList.contains('yangC'))
+  if (l2ne.classList.contains('yin') || l2ne.classList.contains('yinC'))
+    if (l3ne.classList.contains('yin') || l3ne.classList.contains('yinC'))
+      if (l4ne.classList.contains('yang') || l4ne.classList.contains('yangC'))
+		if (l5ne.classList.contains('yin') || l5ne.classList.contains('yinC'))
+			if (l6ne.classList.contains('yin') || l6ne.classList.contains('yinC'))
+{
+  document.getElementById('hex52').style.display = "block";
+}
+
+if (l1ne.classList.contains('yang') || l1ne.classList.contains('yangC'))
+  if (l2ne.classList.contains('yang') || l2ne.classList.contains('yangC'))
+    if (l3ne.classList.contains('yin') || l3ne.classList.contains('yinC'))
+      if (l4ne.classList.contains('yang') || l4ne.classList.contains('yangC'))
+		if (l5ne.classList.contains('yin') || l5ne.classList.contains('yinC'))
+			if (l6ne.classList.contains('yin') || l6ne.classList.contains('yinC'))
+{
+  document.getElementById('hex53').style.display = "block";
+}
+
+if (l1ne.classList.contains('yin') || l1ne.classList.contains('yinC'))
+  if (l2ne.classList.contains('yin') || l2ne.classList.contains('yinC'))
+    if (l3ne.classList.contains('yang') || l3ne.classList.contains('yangC'))
+      if (l4ne.classList.contains('yin') || l4ne.classList.contains('yinC'))
+		if (l5ne.classList.contains('yang') || l5ne.classList.contains('yangC'))
+			if (l6ne.classList.contains('yang') || l6ne.classList.contains('yangC'))
+{
+  document.getElementById('hex54').style.display = "block";
+}
+
+if (l1ne.classList.contains('yin') || l1ne.classList.contains('yinC'))
+  if (l2ne.classList.contains('yin') || l2ne.classList.contains('yinC'))
+    if (l3ne.classList.contains('yang') || l3ne.classList.contains('yangC'))
+      if (l4ne.classList.contains('yang') || l4ne.classList.contains('yangC'))
+		if (l5ne.classList.contains('yin') || l5ne.classList.contains('yinC'))
+			if (l6ne.classList.contains('yang') || l6ne.classList.contains('yangC'))
+{
+  document.getElementById('hex55').style.display = "block";
+}
+
+if (l1ne.classList.contains('yang') || l1ne.classList.contains('yangC'))
+  if (l2ne.classList.contains('yin') || l2ne.classList.contains('yinC'))
+    if (l3ne.classList.contains('yang') || l3ne.classList.contains('yangC'))
+      if (l4ne.classList.contains('yang') || l4ne.classList.contains('yangC'))
+		if (l5ne.classList.contains('yin') || l5ne.classList.contains('yinC'))
+			if (l6ne.classList.contains('yin') || l6ne.classList.contains('yinC'))
+{
+  document.getElementById('hex56').style.display = "block";
+}
+
+if (l1ne.classList.contains('yang') || l1ne.classList.contains('yangC'))
+  if (l2ne.classList.contains('yang') || l2ne.classList.contains('yangC'))
+    if (l3ne.classList.contains('yin') || l3ne.classList.contains('yinC'))
+      if (l4ne.classList.contains('yang') || l4ne.classList.contains('yangC'))
+		if (l5ne.classList.contains('yang') || l5ne.classList.contains('yangC'))
+			if (l6ne.classList.contains('yin') || l6ne.classList.contains('yinC'))
+{
+  document.getElementById('hex57').style.display = "block";
+}
+
+if (l1ne.classList.contains('yin') || l1ne.classList.contains('yinC'))
+  if (l2ne.classList.contains('yang') || l2ne.classList.contains('yangC'))
+    if (l3ne.classList.contains('yang') || l3ne.classList.contains('yangC'))
+      if (l4ne.classList.contains('yin') || l4ne.classList.contains('yinC'))
+		if (l5ne.classList.contains('yang') || l5ne.classList.contains('yangC'))
+			if (l6ne.classList.contains('yang') || l6ne.classList.contains('yangC'))
+{
+  document.getElementById('hex58').style.display = "block";
+}
+
+if (l1ne.classList.contains('yang') || l1ne.classList.contains('yangC'))
+  if (l2ne.classList.contains('yang') || l2ne.classList.contains('yangC'))
+    if (l3ne.classList.contains('yin') || l3ne.classList.contains('yinC'))
+      if (l4ne.classList.contains('yin') || l4ne.classList.contains('yinC'))
+		if (l5ne.classList.contains('yang') || l5ne.classList.contains('yangC'))
+			if (l6ne.classList.contains('yin') || l6ne.classList.contains('yinC'))
+{  
+  document.getElementById('hex59').style.display = "block";
+}
+
+if (l1ne.classList.contains('yin') || l1ne.classList.contains('yinC'))
+  if (l2ne.classList.contains('yang') || l2ne.classList.contains('yangC'))
+    if (l3ne.classList.contains('yin') || l3ne.classList.contains('yinC'))
+      if (l4ne.classList.contains('yin') || l4ne.classList.contains('yinC'))
+		if (l5ne.classList.contains('yang') || l5ne.classList.contains('yangC'))
+			if (l6ne.classList.contains('yang') || l6ne.classList.contains('yangC'))
+{  
+  document.getElementById('hex60').style.display = "block";
+}
+
+if (l1ne.classList.contains('yang') || l1ne.classList.contains('yangC'))
+  if (l2ne.classList.contains('yang') || l2ne.classList.contains('yangC'))
+    if (l3ne.classList.contains('yin') || l3ne.classList.contains('yinC'))
+      if (l4ne.classList.contains('yin') || l4ne.classList.contains('yinC'))
+		if (l5ne.classList.contains('yang') || l5ne.classList.contains('yangC'))
+			if (l6ne.classList.contains('yang') || l6ne.classList.contains('yangC'))
+{  
+  document.getElementById('hex61').style.display = "block";
+}
+
+if (l1ne.classList.contains('yin') || l1ne.classList.contains('yinC'))
+  if (l2ne.classList.contains('yin') || l2ne.classList.contains('yinC'))
+    if (l3ne.classList.contains('yang') || l3ne.classList.contains('yangC'))
+      if (l4ne.classList.contains('yang') || l4ne.classList.contains('yangC'))
+		if (l5ne.classList.contains('yin') || l5ne.classList.contains('yinC'))
+			if (l6ne.classList.contains('yin') || l6ne.classList.contains('yinC'))
+{  
+  document.getElementById('hex62').style.display = "block";
+}
+
+if (l1ne.classList.contains('yin') || l1ne.classList.contains('yinC'))
+  if (l2ne.classList.contains('yang') || l2ne.classList.contains('yangC'))
+    if (l3ne.classList.contains('yin') || l3ne.classList.contains('yinC'))
+      if (l4ne.classList.contains('yang') || l4ne.classList.contains('yangC'))
+		if (l5ne.classList.contains('yin') || l5ne.classList.contains('yinC'))
+			if (l6ne.classList.contains('yang') || l6ne.classList.contains('yangC'))
+{  
+  document.getElementById('hex63').style.display = "block";
+}
+
+if (l1ne.classList.contains('yang') || l1ne.classList.contains('yangC'))
+  if (l2ne.classList.contains('yin') || l2ne.classList.contains('yinC'))
+    if (l3ne.classList.contains('yang') || l3ne.classList.contains('yangC'))
+      if (l4ne.classList.contains('yin') || l4ne.classList.contains('yinC'))
+		if (l5ne.classList.contains('yang') || l5ne.classList.contains('yangC'))
+			if (l6ne.classList.contains('yin') || l6ne.classList.contains('yinC'))
+{  
+  document.getElementById('hex64').style.display = "block";
+}
+}
+
+function castStalks() {
+var lines = [ 'yang', 'yang', 'yang', 'yang', 'yang', 'yin', 'yin', 'yin', 'yin', 'yin', 'yin', 'yin', 'yangC', 'yangC', 'yangC', 'yinC' ];
+var l1 = Math.floor(Math.random() * lines.length);
+var l2 = Math.floor(Math.random() * lines.length);
+var l3 = Math.floor(Math.random() * lines.length);
+var l4 = Math.floor(Math.random() * lines.length);
+var l5 = Math.floor(Math.random() * lines.length);
+var l6 = Math.floor(Math.random() * lines.length);
+var l1ne = document.getElementById('1line');
+var l2ne = document.getElementById('2line');
+var l3ne = document.getElementById('3line');
+var l4ne = document.getElementById('4line');
+var l5ne = document.getElementById('5line');
+var l6ne = document.getElementById('6line');
+
+
+l1ne.classList.remove('yin');
+l2ne.classList.remove('yin');
+l3ne.classList.remove('yin');
+l4ne.classList.remove('yin');
+l5ne.classList.remove('yin');
+l6ne.classList.remove('yin');
+  
+l1ne.classList.remove('yiC');
+l2ne.classList.remove('yinC');
+l3ne.classList.remove('yinC');
+l4ne.classList.remove('yinC');
+l5ne.classList.remove('yinC');
+l6ne.classList.remove('yinC');
+  
+l1ne.classList.remove('yang');
+l2ne.classList.remove('yang');
+l3ne.classList.remove('yang');
+l4ne.classList.remove('yang');
+l5ne.classList.remove('yang');
+l6ne.classList.remove('yang');
+  
+l1ne.classList.remove('yangC');
+l2ne.classList.remove('yangC');
+l3ne.classList.remove('yangC');
+l4ne.classList.remove('yangC');
+l5ne.classList.remove('yangC');
+l6ne.classList.remove('yangC');
+  
+l1ne.classList.add(lines[l1]);
+l2ne.classList.add(lines[l2]);
+l3ne.classList.add(lines[l3]);
+l4ne.classList.add(lines[l4]);
+l5ne.classList.add(lines[l5]);
+l6ne.classList.add(lines[l6]);
+
+showResult();
+
+const hexlines = document.querySelectorAll(".line");
+for (var x = 0; x < hexlines.length; x++)
+    if (hexlines[x].contains = "yinC" || "yangC") {
+    	document.getElementById("cast").style.display = "none";
+		document.getElementById("transform").style.display = "block";
+    }
+}
+
+
+
+function transform() {
+var l1ne = document.getElementById('1line');
+var l2ne = document.getElementById('2line');
+var l3ne = document.getElementById('3line');
+var l4ne = document.getElementById('4line');
+var l5ne = document.getElementById('5line');
+var l6ne = document.getElementById('6line');
+  
+if (l1ne.classList.contains('yinC'))
+  {
+    l1ne.classList.remove('yinC');
+    l1ne.classList.add('yang');
+  }
+if (l1ne.classList.contains('yangC'))
+  {
+    l1ne.classList.remove('yangC');
+    l1ne.classList.add('yin');
+  }
+  
+if (l2ne.classList.contains('yinC'))
+  {
+    l2ne.classList.remove('yinC');
+    l2ne.classList.add('yang');
+  }
+if (l2ne.classList.contains('yangC'))
+  {
+    l2ne.classList.remove('yangC');
+    l2ne.classList.add('yin');
+  }
+if (l3ne.classList.contains('yinC'))
+  {
+    l3ne.classList.remove('yinC');
+    l3ne.classList.add('yang');
+  }
+  
+if (l3ne.classList.contains('yangC'))
+  {
+    l3ne.classList.remove('yangC');
+    l3ne.classList.add('yin');
+  }
+if (l4ne.classList.contains('yinC'))
+  {
+    l4ne.classList.remove('yinC');
+    l4ne.classList.add('yang');
+  }
+if (l4ne.classList.contains('yangC'))
+  {
+    l4ne.classList.remove('yangC');
+    l4ne.classList.add('yin');
+  }
+if (l5ne.classList.contains('yinC'))
+  {
+    l5ne.classList.remove('yinC');
+    l5ne.classList.add('yang');
+  }
+if (l5ne.classList.contains('yangC'))
+  {
+    l5ne.classList.remove('yangC');
+    l5ne.classList.add('yin');
+  }
+  
+if (l6ne.classList.contains('yinC'))
+  {
+    l6ne.classList.remove('yinC');
+    l6ne.classList.add('yang');
+  }
+if (l6ne.classList.contains('yangC'))
+  {
+    l6ne.classList.remove('yangC');
+    l6ne.classList.add('yin');
+  }
+ showResult();
+document.getElementById("cast").style.display = "block";
+document.getElementById("transform").style.display = "none";
+}
+
+</script>
